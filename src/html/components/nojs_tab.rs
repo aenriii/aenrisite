@@ -2,7 +2,7 @@ use cached::proc_macro::cached;
 use maud::{Markup, PreEscaped};
 #[inline(always)]
 #[cached(key = "u128", convert = " { nonce } ", time = 15)]
-pub fn nojs_tabs(tabs: Vec<(String, Markup)>, nonce: u128) -> Markup {
+pub fn tabs(tabs: Vec<(String, Markup)>, nonce: u128) -> Markup {
     let nonce_uuid = uuid::Uuid::from_u128(nonce);
     let stylesheet = get_page_data(tabs.clone().into_iter().map(|x| x.0).collect(), nonce);
     maud::html! {
@@ -14,7 +14,7 @@ pub fn nojs_tabs(tabs: Vec<(String, Markup)>, nonce: u128) -> Markup {
                 div style="display: none;" {
                     @for tab_enum in tabs.clone().into_iter().enumerate() {
                         @let tab = tab_enum.1;
-                        @if (tab_enum.0 == 0) {
+                        @if tab_enum.0 == 0 {
                             input type="radio" id=(format!("sel-{}-{}", tab.0, nonce_uuid)) name=(nonce_uuid) value=(tab.0) checked;
                         }
                         @else {

@@ -1,3 +1,3 @@
 mod nojs_tab;
 
-pub use nojs_tab::nojs_tabs;
+pub use nojs_tab::tabs;

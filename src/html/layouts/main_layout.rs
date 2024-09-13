@@ -1,5 +1,4 @@
 use super::root;
-use cached::proc_macro::cached;
 use maud::{html, Markup};
 #[inline(always)]
 // #[cached(key = "String", convert = r#"{ children.clone().into_string() }"#)]

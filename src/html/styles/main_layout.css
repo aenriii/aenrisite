@@ -4,10 +4,19 @@
     flex-direction: var(--layout-flex-direction);
 
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     gap: 50px;
 
     border: 3px solid white;
+
+    @media (max-width: 768px) {
+        /* TODO */
+    }
+
+    @media (min-width: 768px) {
+        width: 40vw;
+        height: 40vh;
+    }
 }
 body {
     @media (min-aspect-ratio: 4/9) and (max-aspect-ratio: 7/9) and (min-width: 768px) {
