@@ -1,3 +1,3 @@
-mod index;
+mod _index;
 
-pub use index::index;
+pub use _index::index;

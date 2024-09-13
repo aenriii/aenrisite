@@ -6,4 +6,7 @@ edition = "2021"
 [dependencies]
 actix-web = "4.9.0"
 cached = "0.53.1"
+const-random = "0.1.18"
 html-node = "0.5.0"
+maud = { version = "0.26.0", features = ["actix-web"] }
+uuid = { version = "1.10.0", features = ["v4", "fast-rng"] }
