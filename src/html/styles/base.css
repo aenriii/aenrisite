@@ -1,17 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap");
-/* default */
-html {
-    /* --primary: %primary%;
-    --secondary: %secondary%; */
+:root {
+    --text: #fff;
+    --subtext: #ccc;
+    --subtext-variant: #aaa;
 
     --background: #000;
-    --on-background: #000;
 
-    --text: #fff;
-    --subtext: #999;
-    --subtext-variant: #ccc;
-
-    --font: "Fira Code", monospace;
+    --font-family: "Fira Code", monospace
 }
 
 html,
@@ -19,10 +14,76 @@ body {
     display: flex;
     background: var(--background);
     color: var(--text);
-    font-family: var(--font);
-    user-select: none;
+    font-family: var(--font-family);
 }
-@media (min-width: 769px) {
+
+body {
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+span, p {
+    font-size: var(--font-size-text);
+    font-family: var(--font-family);
+    margin: 0;
+}
+
+.h1 {
+    font-size: var(--font-size-h1);
+    font-weight: bolder;
+}
+
+.h2 {
+    font-size: var(--font-size-h2);
+    font-weight: bold;
+}
+
+.subtext {
+    color: var(--subtext-variant);
+}
+
+@media screen and (max-width: 600px) {
+    :root {
+        --border: 2px white solid;
+
+        --font-size-h1: 24px;
+        --font-size-h2: 18px;
+        --font-size-text: 15px;
+        --font-size-subtext: 13px;
+    }
+    html {
+        min-height: 100vh;
+        width: 100vw;
+        margin: 0;
+        margin-bottom: auto;
+    }
+}
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+    :root {
+        --border: 3px white solid;
+
+        --font-size-h1: 24px;
+        --font-size-h2: 20px;
+        --font-size-text: 15px;
+        --font-size-subtext: 13px;
+    }
+    html {
+        height: 100vh;
+        width: 100vw;
+        margin: 0;
+    }
+}
+@media screen and (min-width: 1201px) {
+    :root {
+        --border: 3px white solid;
+
+        --font-size-h1: 24px;
+        --font-size-h2: 20px;
+        --font-size-text: 16px;
+        --font-size-subtext: 14px;
+    }
     html {
         height: 100vh;
         width: 100vw;
@@ -30,11 +91,12 @@ body {
     }
 }
 
-@media (max-width: 768px) {
-    html {
-        min-height: 100vh;
-        width: 100vw;
-        margin: 0;
-        margin-bottom: auto;
-    }
+@media screen and (max-width: 600px) {
+
+}
+@media screen and (min-width: 601px) and (max-width: 1200px) {
+
+}
+@media screen and (min-width: 1201px) {
+
 }

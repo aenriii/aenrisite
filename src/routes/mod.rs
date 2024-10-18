@@ -1,3 +1,3 @@
-mod _index;
+mod index;
 
-pub use _index::index;
+pub use index::homepage;

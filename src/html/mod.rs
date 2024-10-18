@@ -1,3 +1,3 @@
 pub mod components;
-pub mod layouts;
+pub mod frames;
 pub mod styles;

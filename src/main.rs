@@ -1,13 +1,9 @@
-#![feature(test)]
 #![feature(async_closure)]
 mod html;
 mod routes;
-
-#[cfg(test)]
-mod tests;
-
-use actix_web::{middleware, web, App, HttpResponse, HttpServer};
-pub(crate) use html::{components, layouts, styles};
+pub(crate) mod collection;
+use actix_web::{middleware, web::resource, App, HttpResponse, HttpServer};
+pub(crate) use html::{components, frames, styles};
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -17,9 +13,10 @@ async fn main() -> std::io::Result<()> {
     HttpServer::new(move || {
         App::new()
             .wrap(middleware::Logger::default())
-            .service(routes::index)
-            .service(web::resource("/base.css").to(style(styles::BASE)))
-            .service(web::resource("/main_layout.css").to(style(styles::MAIN_LAYOUT)))
+            .service(routes::homepage)
+            .service(resource("/assets/base.css").to(style(styles::BASE)))
+            .service(resource("/assets/home.css").to(style(styles::HOME)))
+            .service(actix_files::Files::new("/assets", "./static"))
     })
     .bind(("127.0.0.1", 8080))?
     .run()
