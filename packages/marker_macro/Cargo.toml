@@ -1,0 +1,13 @@
+[package]
+name = "marker_macro"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+litrs = "0.4.1"
+marker = { path = "../marker" }
+proc-macro2 = "1.0.91"
+quote = "1.0.37"
+
+[lib]
+proc-macro = true

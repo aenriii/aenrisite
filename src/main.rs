@@ -4,12 +4,18 @@ mod routes;
 pub(crate) mod collection;
 use actix_web::{middleware, web::resource, App, HttpResponse, HttpServer};
 pub(crate) use html::{components, frames, styles};
+use marker_macro::marker;
+
+
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
     let style = |src: &'static str| {
         move || async move { HttpResponse::Ok().content_type("text/css").body(src) }
     };
+
+    // let test = marker!("../pages/radqueer.md");
+
     HttpServer::new(move || {
         App::new()
             .wrap(middleware::Logger::default())

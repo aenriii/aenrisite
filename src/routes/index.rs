@@ -21,14 +21,14 @@ fn element(cache_nonce: u128) -> Markup {
         String::from("home") => collection! {
             html! {
                 div.home-sidebar-content {
-                    img.avatar-image src="/assets/avatar.png" alt="Avatar Image";
+                    img.avatar-image src="/assets/avatar.webp" alt="Avatar Image";
                     div.home-sidebar-content-container {
                         span.h1 { ("hi, im aenri") };
                         div.home-sidebar-description {
-                            span { ("pup/it / θ∆" )};
-                            span { ("bodily 19, ageless" )};
-                            span { ("pro-para anti-harm" )};
-                            span { ("poly puppy developer" )};
+                            span { ("pup/it / θ∆" ) };
+                            span { ("bodily 19, ageless" ) };
+                            span { ("pro-para anti-harm" ) };
+                            span { ("poly puppy developer" ) };
                         };
                         span.h2 { ("links") };
                         div.links {
@@ -72,7 +72,7 @@ fn element(cache_nonce: u128) -> Markup {
                                         "##) };
                                 p { (r##"i live in the midwest us, with
                                         my clocks set to eastern time."##) }
-                                p { (r##"i love all of my %n partners <3"##) }
+                                p { (r##"i love all of my 6 partners <3"##) }
                             };
 
                         };

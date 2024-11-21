@@ -51,5 +51,5 @@ pub fn homepage( tabs: HashMap<String, (Markup, Markup)>, cache_nonce: u128 ) ->
                 div.togglable for="blog" { (blog_content) };
             }
         }
-    })
+    }, None)
 }
