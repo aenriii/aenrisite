@@ -5,6 +5,7 @@ edition = "2021"
 
 [dependencies]
 litrs = "0.4.1"
+log = "0.4.22"
 marker = { path = "../marker" }
 proc-macro2 = "1.0.91"
 quote = "1.0.37"

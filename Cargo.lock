@@ -231,8 +231,10 @@ dependencies = [
  "actix-web",
  "cached",
  "const-random",
+ "env_logger",
  "html-node",
  "lazy_static",
+ "log",
  "marker",
  "marker_macro",
  "maud",
@@ -755,6 +757,10 @@ dependencies = [
 ]
 
 [[package]]
+name = "dtf"
+version = "0.1.0"
+
+[[package]]
 name = "encoding_rs"
 version = "0.8.34"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -768,6 +774,29 @@ name = "entities"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "b5320ae4c3782150d900b79807611a59a99fc9a1d61d686faafc24b93fc8d7ca"
+
+[[package]]
+name = "env_filter"
+version = "0.1.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4f2c92ceda6ceec50f43169f9ee8424fe2db276791afde7b2cd8bc084cb376ab"
+dependencies = [
+ "log",
+ "regex",
+]
+
+[[package]]
+name = "env_logger"
+version = "0.11.5"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "e13fa619b91fb2381732789fc5de83b45675e882f66623b7d8cb4f643017018d"
+dependencies = [
+ "anstream",
+ "anstyle",
+ "env_filter",
+ "humantime",
+ "log",
+]
 
 [[package]]
 name = "equivalent"
@@ -990,6 +1019,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "df3b46402a9d5adb4c86a0cf463f42e19994e3ee891101b1841f30a545cb49a9"
 
 [[package]]
+name = "humantime"
+version = "2.1.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "9a3a5bfb195931eeb336b2a7b4d761daec841b97f947d34394601737a7bba5e4"
+
+[[package]]
 name = "ident_case"
 version = "1.0.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1128,6 +1163,8 @@ name = "marker"
 version = "0.1.0"
 dependencies = [
  "comrak",
+ "lazy_static",
+ "log",
  "proc-macro2",
  "quote",
 ]
@@ -1137,6 +1174,7 @@ name = "marker_macro"
 version = "0.1.0"
 dependencies = [
  "litrs",
+ "log",
  "marker",
  "proc-macro2",
  "quote",

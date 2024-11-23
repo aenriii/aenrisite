@@ -5,5 +5,7 @@ edition = "2021"
 
 [dependencies]
 comrak = "0.29.0"
+lazy_static = "1.5.0"
+log = "0.4.22"
 proc-macro2 = "1.0.91"
 quote = "1.0.37"

@@ -41,9 +41,9 @@ impl ToTokens for Node<'_> {
                     nodes: &[#(#nodes),*]
                 } });
             }
-            Link { text, href } => {
+            Link { nodes, href } => {
                 tokens.append_all(quote! { Node::Link {
-                    text: #text,
+                    nodes: &[#(#nodes),*],
                     href: #href
                 } });
             }
@@ -75,17 +75,14 @@ impl ToTokens for TextOptions<'_> {
 impl ToTokens for HeaderOptions<'_> {
     fn to_tokens(&self, tokens: &mut proc_macro2::TokenStream) {
         let level = self.level;
-        let text = match self.text {
-            Some(txt) => quote! { Some(#txt) },
-            None => quote! { None },
-        };
+        let nodes = &self.nodes;
         let id = match self.id {
             Some(txt) => quote! { Some(#txt) },
             None => quote! { None },
         };
         tokens.append_all(quote! {HeaderOptions {
             level: #level,
-            text: #text,
+            nodes: &[#(#nodes),*],
             id: #id
         }});
     }
@@ -129,13 +126,13 @@ mod tests {
     fn totokens_impl_serializes_HeaderOptions() {
         let ho = HeaderOptions {
             level: 0,
-            text: Some("test"),
+            nodes: &[Node::Text { options: None, text: "header" }],
             id: None,
         };
         let ho_tokens = ho.to_token_stream();
         let quote_tokens = quote! {HeaderOptions {
             level: 0u8,
-            text: Some("test"),
+            nodes: &[Node::Text { options: None, text: "header" }],
             id: None
         }};
         assert_eq!(ho_tokens.to_string(), quote_tokens.to_string())
@@ -161,7 +158,7 @@ mod tests {
         let node = Node::Block {
             header: HeaderOptions {
                 level: 0u8,
-                text: None,
+                nodes: &[],
                 id: None
             },
             metadata: &[("alignment", "center")],
@@ -184,7 +181,11 @@ mod tests {
                             text: "im so cool"
                         },
                         Node::Link {
-                            text: "hello world",
+                            nodes: &[
+                                Node::Text {
+                                    options: None,
+                                    text: "im so cool"
+                                }],
                             href: "example.com"
                         }
                     ]
@@ -196,7 +197,7 @@ mod tests {
         let quote_tokens = quote! {Node::Block {
             header: HeaderOptions {
                 level: 0u8,
-                text: None,
+                nodes: &[],
                 id: None
             },
             metadata: &[("alignment", "center")],
@@ -219,7 +220,11 @@ mod tests {
                             text: "im so cool"
                         },
                         Node::Link {
-                            text: "hello world",
+                            nodes: &[
+                                Node::Text {
+                                    options: None,
+                                    text: "im so cool"
+                                }],
                             href: "example.com"
                         }
                     ]
@@ -243,7 +248,7 @@ mod tests {
             nodes: &[Node::Block {
                 header: HeaderOptions {
                     level: 1u8,
-                    text: Some("what."),
+                    nodes: &[Node::Text { options: None, text: "what."}],
                     id: None
                 },
                 metadata: &[],
@@ -251,7 +256,7 @@ mod tests {
                     Node::Block {
                         header: HeaderOptions {
                             level: 0u8,
-                            text: None,
+                            nodes: &[],
                             id: None
                         },
                         metadata: &[("alignment", "center")],
@@ -273,7 +278,7 @@ mod tests {
                     Node::Block {
                         header: HeaderOptions {
                             level: 0u8,
-                            text: None,
+                            nodes: &[],
                             id: None
                         },
                         metadata: &[],
@@ -310,7 +315,7 @@ mod tests {
             nodes: &[Node::Block {
                 header: HeaderOptions {
                     level: 1u8,
-                    text: Some("what."),
+                    nodes: &[Node::Text { options: None, text: "what."}],
                     id: None
                 },
                 metadata: &[],
@@ -318,7 +323,7 @@ mod tests {
                     Node::Block {
                         header: HeaderOptions {
                             level: 0u8,
-                            text: None,
+                            nodes: &[],
                             id: None
                         },
                         metadata: &[("alignment", "center")],
@@ -340,7 +345,7 @@ mod tests {
                     Node::Block {
                         header: HeaderOptions {
                             level: 0u8,
-                            text: None,
+                            nodes: &[],
                             id: None
                         },
                         metadata: &[],

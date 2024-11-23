@@ -1,4 +1,4 @@
-
+#[derive(Debug, Clone, Copy)]
 pub enum Node<'a> {
     Block {
         header: HeaderOptions<'a>,
@@ -12,7 +12,7 @@ pub enum Node<'a> {
         nodes: &'a[Node<'a>]
     },
     Link {
-        text: &'a str,
+        nodes: &'a[Node<'a>],
         href: &'a str
     },
     Text {
@@ -21,13 +21,13 @@ pub enum Node<'a> {
     }
 
 }
-
+#[derive(Debug, Clone, Copy)]
 pub struct HeaderOptions<'a> {
     pub level: u8,
-    pub text: Option<&'a str>,
+    pub nodes: &'a[Node<'a>],
     pub id: Option<&'a str>
 }
-
+#[derive(Debug, Clone, Copy)]
 pub struct TextOptions<'a> {
     pub style: &'a str,
     pub size: &'a str

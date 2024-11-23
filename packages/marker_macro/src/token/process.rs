@@ -9,11 +9,14 @@ pub fn extract_next_path(token_stream: TokenStream, exists: bool) -> Option<Path
     for token in token_stream.into_iter() {
         match token {
             TokenTree::Literal(lit) => {
+                println!("processing literal {:?}", lit);
                 // i love litrs
                 if let Ok(string_lit) = StringLit::try_from(lit) {
                     // test path
 
                     let path = string_lit.into_value();
+
+                    println!("literal is str, {}", path.to_string());
 
                     // TODO: actually test if valid path
                     let path = PathBuf::from(path.to_string());

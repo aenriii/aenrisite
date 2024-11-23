@@ -8,7 +8,7 @@ description: an explaination and defense of the radqueer position from my perspe
 
 ---
 
-# what.
+# what. [a link](https://example.com)
 
 [=center]i would like us to first take a deep breath.
 bear with me, it'll all make sense soon
