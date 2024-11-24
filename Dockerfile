@@ -1,5 +1,5 @@
 from rust:latest
 
-copy . .
-workdir .
+copy . app
+workdir app
 cmd ["cargo", "run", "--release"]
