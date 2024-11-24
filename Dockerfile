@@ -1,4 +1,4 @@
-from rust:latest
+from rust:nightly-slim
 
 copy . app
 workdir app
