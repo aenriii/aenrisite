@@ -27,7 +27,7 @@ fn element(cache_nonce: u128) -> Markup {
                         div.home-sidebar-description {
                             span { ("pup/it / θ∆" ) };
                             span { ("bodily 19, ageless" ) };
-                            span { ("pro-para anti-harm" ) };
+                            span { ("radqueer, anti-harm" ) };
                             span { ("poly puppy developer" ) };
                         };
                         span.h2 { ("links") };
