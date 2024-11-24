@@ -1,4 +1,4 @@
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Clone)]
 pub enum LengthKind {
     Px,
     Em,
@@ -6,14 +6,14 @@ pub enum LengthKind {
 }
 pub type Length = (u32, LengthKind);
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Clone)]
 pub enum BreakKind {
     Inline,
     Visible,
     Invisible
 }
 
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Clone)]
 pub enum TextStyle {
     None,
     Italic,

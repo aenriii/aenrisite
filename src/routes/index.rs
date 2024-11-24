@@ -32,7 +32,18 @@ fn element(cache_nonce: u128) -> Markup {
                         };
                         span.h2 { ("links") };
                         div.links {
-                            // TODO
+                            a href="https://discord.com/users/98133204636028928" target="_blank" {
+                                img.link-img src="/assets/discord.svg" alt="@aenriii on discord";
+                            }
+                            a href="https://signal.me/#eu/s2xWaaUelilwvDaVg6xjIC73BHzWC_CQuy47fhTEn-eTLI94cMpK3Ls7E_hkOPUL" target="_blank" {
+                                img.link-img src="/assets/signal.svg" alt="@aenri.11 on signal";
+                            }
+                            a href="https://bsky.app/profile/aenri.loveh.art" target="_blank" {
+                                img.link-img src="/assets/bsky.svg" alt="aenri.loveh.art on bsky";
+                            }
+                            a href="https://x.com/aenri_" target="_blank" {
+                                img.link-img src="/assets/twitter.svg" alt="@aenri_ on twitter";
+                            }
                         }
                     }
                 }
@@ -46,13 +57,14 @@ fn element(cache_nonce: u128) -> Markup {
                         };
                         div.home-blog-post {
                             div.home-blog-post-header {
-                                span.title.h2 { ("you don't need javascript") };
+                                span.title.h2 { ("writing a dynamic site without clientside code") };
                                 span.sep { ("-") };
-                                span.date.subtext { ("11/10/2024") };
+                                span.date.subtext { ("2024/11/23") };
                             };
                             div.home-blog-post-text {
                                 // todo
-                                p { ("Blog posts coming soon!") }
+                                p { (" a nearly tall tale of svelte, rust, and probably like, 200+ hours") }
+                                small { ("Blog posts coming soon!") }
                             }
                         };
 
@@ -66,9 +78,10 @@ fn element(cache_nonce: u128) -> Markup {
                                 p { (r##"im an autistic transfem
                                         developer mostly coding in rust,
                                         kotlin, and typescript."##) };
-                                p { (r##"im currently in my third year of
-                                        uni, dual-majoring in compsci and
-                                        gender studies.
+                                p { (r##"im currently out of school, working
+                                        various jobs to pull me up to where
+                                        i feel comfortable continuing my
+                                        adventures.
                                         "##) };
                                 p { (r##"i live in the midwest us, with
                                         my clocks set to eastern time."##) }
@@ -81,7 +94,7 @@ fn element(cache_nonce: u128) -> Markup {
                                 span.h2 { ("listening to...") }
                             };
                             div.home-content-section-content {
-                                // todo
+                                p { ("This section is still under construction, come back later!") }
                             };
                         };
                     }
@@ -94,7 +107,10 @@ fn element(cache_nonce: u128) -> Markup {
 
             },
             html! {
-                // content
+                div.under-construction {
+                    span.h2 { ("Under construction") }
+                    em { ("come back later!") }
+                }
             }
         },
         String::from("blog") => collection! {
@@ -103,7 +119,10 @@ fn element(cache_nonce: u128) -> Markup {
 
             },
             html! {
-                // content
+                div.under-construction {
+                    span.h2 { ("Under construction") }
+                    em { ("come back later!") }
+                }
             }
         },
     };

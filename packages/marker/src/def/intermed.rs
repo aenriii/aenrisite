@@ -2,20 +2,20 @@ use super::common::{
     BreakKind, Length, TextStyle
 };
 
-#[derive(Debug, Default, PartialEq)]
+#[derive(Debug, Default, PartialEq, Clone)]
 pub struct Page {
     pub metadata: PageMetadata,
     pub children: Vec<Node>
 }
 
-#[derive(Debug, Default, PartialEq)]
+#[derive(Debug, Default, PartialEq, Clone)]
 pub struct PageMetadata {
     pub title: String,
     pub description: String,
     pub flags: Vec<String>,
     pub options: Vec<(String, String)>
 }
-#[derive(Debug, PartialEq)]
+#[derive(Debug, PartialEq, Clone)]
 pub enum Node {
     Container {
         flags: Vec<String>,
@@ -64,7 +64,8 @@ pub enum Node {
     Link {
         flags: Vec<String>,
         options: Vec<(String, String)>,
-        children: Vec<Node>
+        children: Vec<Node>,
+        href: String
     },
     Mixin {
         kind: String,

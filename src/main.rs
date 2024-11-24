@@ -7,8 +7,6 @@ pub(crate) use html::{components, frames, styles};
 use marker::Page;
 use marker_macro::marker;
 
-const TEST: Page<'static> = marker!("pages/test.md");
-
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {

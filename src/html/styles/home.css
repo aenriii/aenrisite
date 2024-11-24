@@ -4,6 +4,7 @@
     display: flex;
     flex: 1;
     gap: 50px;
+    top: 0;
 }
 
 .sidebar {
@@ -82,12 +83,32 @@
     gap: 5px;
 }
 
+.content {
+    display: flex;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+.links a {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.links a img {
+    height: 30px;
+}
 
 @media screen and (max-width: 600px) {
     #content-host {
         margin: 0;
         padding: 30px;
         flex-direction: column;
+
     }
     .avatar-image {
         width: 100px;
@@ -103,6 +124,8 @@
     }
     .content {
         padding: 0px 10px;
+        flex: 1;
+        min-width: 100%;
     }
 
     .home-blog-post-header {
@@ -149,6 +172,8 @@
     }
     .content {
         padding: 0px 10px;
+        flex: 1;
+        min-width: 100%;
     }
     .home-blog-post-header {
         display: flex;
@@ -240,7 +265,14 @@
 }
 
 
-
+.under-construction {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    height: max-content;
+ }
 .tab { color: var(--text); }
 
 #content-host:has(#tab-home:checked) div.togglable:not([for=home]) { display: none; }
@@ -249,11 +281,11 @@
 .tabs:has(#tab-home:checked) label:not([for=tab-home]):hover { color: var(--subtext); }
 
 #content-host:has(#tab-projects:checked) div.togglable:not([for=projects]) { display: none; }
-#content-host:has(#tab-home:checked) div.togglable[for=projects] { display: contents; }
+#content-host:has(#tab-projects:checked) div.togglable[for=projects] { display: contents; }
 .tabs:has(#tab-projects:checked) label:not([for=tab-projects]) { color: var(--subtext-variant); }
 .tabs:has(#tab-projects:checked) label:not([for=tab-projects]):hover { color: var(--subtext); }
 
 #content-host:has(#tab-blog:checked) div.togglable:not([for=blog]) { display: none; }
-#content-host:has(#tab-home:checked) div.togglable[for=blog] { display: contents; }
+#content-host:has(#tab-blog:checked) div.togglable[for=blog] { display: contents; }
 .tabs:has(#tab-blog:checked) label:not([for=tab-blog]) { color: var(--subtext-variant); }
 .tabs:has(#tab-blog:checked) label:not([for=tab-blog]):hover { color: var(--subtext); }

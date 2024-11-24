@@ -20,7 +20,7 @@ body {
 body {
     flex: 1;
     align-items: center;
-    justify-content: center;
+    justify-content: start;
     flex-direction: column;
 }
 

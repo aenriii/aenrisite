@@ -1,0 +1,10 @@
+services:
+  aenrisite:
+    build: .
+    restart: unless-stopped
+    container_name: aenrisite
+    networks:
+      - nginx
+networks:
+  nginx:
+    external: true
