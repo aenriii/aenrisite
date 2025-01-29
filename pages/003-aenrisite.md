@@ -22,8 +22,7 @@ website that shouldve taken maybe 10.
 ### first attempts
 -- a shitty site in client-side svelte
 
-as of writing this, [aenri.loveh.art](https://aenri.loveh.art) still holds
-the v1 of my website. this was an amateur attempt at learning svelte, and
+the v1 of my website was genuinely an amateur attempt at learning svelte, and
 it resulted in a website where you could not change the active tab without
 javascript completely enabled. in addition, over time, i began to dislike
 the bubbly catppuccin aesthetic when used to represent myself. that, and
@@ -35,7 +34,7 @@ that the best thing to do would be to start over.
 
 did you know that you can use pseudoselectors and various other filters to
 only show elements if a radio element is selected? i found that out this
-time around, using an assortment of what i liked to call "css fuckery" to
+time around, using an assortment of css and various other fuckeries to
 remove the javascript barrier to switching tabs. within this iteration, a
 shift towards a more straightforward design was seen, with rounded fonts
 often being traded out in favor of bold header fonts and plain but strong
@@ -59,13 +58,16 @@ pieces together with some oauth here and a couple scopes there.
 
 2. [size=1.5em] the ability to get lyrics from a spotify song id.
 
-this proved to be the most brutal part, at least for as far as i got. i
+this proved easily difficult for seemingly no reason; i
 attempted scraping the api of a spicetify plugin, i tried using respot,
 i tried just about everything i could think of including re-implementing
-a smaller bit of librespot
+a smaller bit of librespot in typescript, and ended up depending on a
+black-box api that the spicetify plugin [beautiful-lyrics]()
+used
 
 3. [size=1.5em] a server-side method for quick html/css codegen to animate lyrics
 
-oh dear god.
-
-
+[size=1.2em,bold] oh dear god.
+three iterations over two programming languages, as well as an indescribable amount
+of failed attempts to even think of a structure for this application, and i gave up.
+the effort was not worth it to create such a small part of my website

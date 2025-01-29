@@ -3,13 +3,12 @@ name = "aenrisite"
 version = "0.1.0"
 edition = "2021"
 
+
 [workspace]
 members = [
-    ".", "packages/dtf",
-    "packages/marker",
-    "packages/marker_macro"
+    ".",
+    "pkg/awrf"
 ]
-
 
 [dependencies]
 actix-files = "0.6.6"
@@ -19,8 +18,6 @@ const-random = "0.1.18"
 html-node = "0.5.0"
 maud = { version = "0.26.0", features = ["actix-web"] }
 uuid = { version = "1.10.0", features = ["v4", "fast-rng"] }
-marker = { path = "packages/marker" }
-marker_macro = { path = "packages/marker_macro" }
 lazy_static = "1.5.0"
 log = "0.4.22"
 env_logger = "0.11.5"
