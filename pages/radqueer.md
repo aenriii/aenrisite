@@ -8,7 +8,7 @@ description: an explaination and defense of the radqueer position from my perspe
 
 ---
 
-# what. [a link](https://example.com)
+# what.
 
 [=center]i would like us to first take a deep breath.
 bear with me, it'll all make sense soon
@@ -37,4 +37,5 @@ paraphilias and trans-ids
 
 paraphilias have been defined in many ways, but you will typically only hear them used
 in referral to sexual attraction to anything other than a legally consenting human
-partner. realistically, so-called "paraphilic interests"
+partner. realistically, so-called "paraphilic interests" are typically represented as
+what are colloquially considered the "big three," pedophilia, zoophilia, and necrophilia.

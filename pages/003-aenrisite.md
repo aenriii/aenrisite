@@ -71,3 +71,7 @@ used
 three iterations over two programming languages, as well as an indescribable amount
 of failed attempts to even think of a structure for this application, and i gave up.
 the effort was not worth it to create such a small part of my website
+
+#### anti-js actually means a server-side rust application (iteration one)
+
+
