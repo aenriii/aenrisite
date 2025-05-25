@@ -3,13 +3,20 @@ import adapter from "svelte-adapter-bun";
 import { vitePreprocess } from "@sveltejs/vite-plugin-svelte";
 import { createHighlighter } from "@bitmachina/highlighter";
 import { frappe } from "@catppuccin/vscode";
+
+import { join } from "path";
+import { cwd } from "process";
+export function pathFromProjectRoot(...args) {
+  return join(cwd(), ...args);
+}
+
 const config = {
   preprocess: [
     vitePreprocess(),
     mdsvex({
       extensions: [".svx", ".md"],
       layout: {
-        blog: "./src/lib/layouts/BlogLayout.svelte",
+        blog: pathFromProjectRoot("/src/lib/layouts/BlogLayout.svelte"),
       },
       highlight: {
         highlighter: await createHighlighter({

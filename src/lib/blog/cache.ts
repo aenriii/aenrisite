@@ -28,10 +28,10 @@ export default {
     // we have now confirmed that both the store and threshold
     // are valid
     if (store.length >= filesThreshold.threshold) {
-      console.info(`cache length >= threshold of ${filesThreshold.threshold}`);
+      // console.info(`cache length >= threshold of ${filesThreshold.threshold}`);
       return;
     }
-    console.warn(`Reloading cache, cache.length = ${store.length}`);
+    // console.warn(`Reloading cache, cache.length = ${store.length}`);
     // find all posts and get their data
     let postsSrc = (
       await Promise.all(
@@ -99,7 +99,7 @@ export default {
     return store;
   },
   clean() {
-    store = store.filter((it) => it.expires < Date.now());
+    store = store.filter((it) => it.expires > Date.now());
   },
   clear() {
     store = [];

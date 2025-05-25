@@ -6,15 +6,19 @@
         },
         {
             src: "/88x31/windowsme.png",
+            link: "https://archive.org/details/windows-me-iso",
         },
         {
             src: "/88x31/winrar.gif",
+            link: "https://www.win-rar.com",
         },
         {
             src: "/88x31/archlinux.gif",
+            link: "https://archlinux.org/",
         },
         {
             src: "/88x31/animegay.png",
+            link: "https://en.wikipedia.org/wiki/Onimai",
         },
         {
             src: "/88x31/beecage.gif",
@@ -32,6 +36,7 @@
         },
         {
             src: "/88x31/netscapenetscapenetscape.gif",
+            link: "https://archive.org/details/n32e202",
         },
         {
             src: "/88x31/paws.gif",

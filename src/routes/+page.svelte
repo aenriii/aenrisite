@@ -14,7 +14,7 @@
         <ProfileCard />
         <EEx31Card />
     </div>
-    <div class="flex flex-col md:flex-row lg:flex-row w-full gap-8 pl-6 pr-6">
+    <div class="flex flex-col lg:flex-row w-full gap-8 pl-6 pr-6">
         <AboutMeCard />
         <ActivityCard />
     </div>
