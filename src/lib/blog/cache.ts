@@ -35,10 +35,14 @@ export default {
     const postsSrc = (
       await Promise.all(
         SOURCES.map(async (it) => {
-          const files = await readdir(pathFromProjectRoot(it));
-          return files.map((that) => {
-            return pathFromProjectRoot(it, that);
-          });
+          try {
+            const files = await readdir(pathFromProjectRoot(it));
+            return files.map((that) => {
+              return pathFromProjectRoot(it, that);
+            });
+          } catch {
+            return [];
+          }
         }),
       )
     ).flat();
