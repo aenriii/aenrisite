@@ -1,6 +1,5 @@
 import { parse } from "yaml";
 import { readdir, readFile } from "fs/promises";
-import { join } from "path";
 import { pathFromProjectRoot } from "$lib/util";
 // we dont expect these to change often, so we can have a long TTL
 const TTL = 1000 * 60 * 60;
@@ -11,7 +10,7 @@ let store: {
   path: string;
   visible: boolean;
   data: {
-    metadata: any;
+    metadata: Record<string, unknown>;
     context: string;
   };
   expires: number;
@@ -33,7 +32,7 @@ export default {
     }
     // console.warn(`Reloading cache, cache.length = ${store.length}`);
     // find all posts and get their data
-    let postsSrc = (
+    const postsSrc = (
       await Promise.all(
         SOURCES.map(async (it) => {
           const files = await readdir(pathFromProjectRoot(it));
@@ -43,15 +42,15 @@ export default {
         }),
       )
     ).flat();
-    let posts = (
+    const posts = (
       await Promise.all(
         postsSrc.map(async (it) => {
           try {
             let fileContents = (await readFile(it)).toString();
-            let metadata = {} as any;
+            let metadata = {} as Record<string, unknown>;
             if (fileContents.includes("---")) {
               // assume (i control all input to this so its ok)
-              let frontmatter = fileContents.split("---")[1];
+              const frontmatter = fileContents.split("---")[1];
               // completely honest, this will work. most things
               // wont have more than the initial two markers
               // and the things that do wont have them frequently
@@ -69,7 +68,6 @@ export default {
               },
               expires: Date.now() + TTL,
             };
-            return;
           } catch (e) {
             console.warn(`Error while reading blog post: ${e}`);
             return null;
@@ -88,7 +86,7 @@ export default {
     console.info("fetching files threshold");
     let thresh = -2;
     for (const source of SOURCES) {
-      let dir = await readdir(pathFromProjectRoot(source));
+      const dir = await readdir(pathFromProjectRoot(source));
       thresh += dir.filter(
         (it) => it.startsWith("+") && it.endsWith(".svx"),
       ).length;

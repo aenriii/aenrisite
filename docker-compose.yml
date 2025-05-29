@@ -1,0 +1,7 @@
+services:
+  aenrisite:
+    build: .
+    container_name: aenrisite
+    restart: unless-stopped
+    ports:
+      - 3000:3000

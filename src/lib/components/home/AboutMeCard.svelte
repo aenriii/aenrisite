@@ -1,5 +1,5 @@
 <div class="flex flex-col h-full gap-3 flex-1/3 items-center">
-    <h1 class="font-fira text-xl">{`what's an aenri?`}</h1>
+    <h1 class="font-fira text-xl">what's an aenri?</h1>
     <div
         class="bg-ctp-surface1 p-4 flex flex-col font-fira h-full rounded-2xl gap-4 font-medium"
     >

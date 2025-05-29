@@ -50,7 +50,7 @@
 <div
     class="flex flex-wrap flex-row flex-1 p-4 gap-2.5 bg-ctp-mantle justify-center rounded-2xl"
 >
-    {#each EEx31s as it}
+    {#each EEx31s as it (it.src)}
         {#if it.link}
             <a href={it.link}>
                 <img alt="88x31" src={it.src} />

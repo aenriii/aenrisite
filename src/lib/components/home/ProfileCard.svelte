@@ -37,21 +37,22 @@
 <div
     class="flex p-8 bg-ctp-surface0 rounded-2xl gap-4 min-w-max flex-col md:flex-row lg:flex-row"
 >
-    <img src={"/avatar.png"} alt="Avatar" class="rounded-3xl" />
+    <img src="/avatar.png" alt="Avatar" class="rounded-3xl" />
     <div class="flex flex-col p-2 font-fira gap-2.5">
         <h1 class="text-ctp-text text-4xl italic font-bold">hi, im aenri~</h1>
         <p class="text-sm w-fill text-right flex-1">
-            pup/it / ageless
+            pup/it / transage
             <br />
-            poly puppy therian
+            radqueer puppy therian
             <br />
-            radqueer loli kidthing
+            ageslider[4,16] aam kidthing
+            <br />
         </p>
         <span class="text-sm flex-1 italic">
             do no harm, love any and all
         </span>
         <div class="flex flex-row gap-2">
-            {#each LINKS as link}
+            {#each LINKS as link (link.link)}
                 <a
                     href={link.link}
                     class="h-6 w-auto flex justify-center items-center"
